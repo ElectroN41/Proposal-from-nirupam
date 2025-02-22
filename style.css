@@ -1,74 +1,92 @@
-html {
+html, body {
     height: 100%;
-  }
-  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background: linear-gradient(117deg, #ff41f7 0%, rgba(255, 73, 73, 0.81) 100%);
-  }
-  h1 {
     text-align: center;
+}
+
+/* Heading */
+h1 {
     color: white;
-    font-size: 72px;
+    font-size: clamp(32px, 6vw, 72px); /* Responsive font size */
     font-weight: 700;
     text-transform: uppercase;
-  }
-  .btn {
+    margin: 20px 0;
+}
+
+/* Buttons */
+.btn {
     color: gray;
     background-color: white;
     border: none;
     border-radius: 50px;
-    width: 200px;
-    height: 50px;
-    margin: 25px 10px;
+    width: clamp(120px, 15vw, 200px); /* Responsive width */
+    height: clamp(35px, 5vh, 50px); /* Responsive height */
+    margin: 15px;
     font-weight: bold;
-  }
-  .btn:hover {
+    font-size: clamp(14px, 2vw, 18px);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
     background-color: #ff4690;
     border: 2px solid white;
-  }
-  @media (max-width: 1148px) {
-    h1 {
-      font-size: 50px;
-    }
-    .btn {
-      width: 150px;
-      height: 40px;
-    }
-  }
-  @media (max-width: 795px) {
-    h1 {
-      font-size: 40px;
-    }
-  }
-  #showMessage {
+}
+
+/* Hidden Message */
+#showMessage {
     display: none;
-  }
-  #showMessage h1 {
-    font-size: 50px;
-  }
-  /* Animate Text */
-  .ml6 {
+}
+
+#showMessage h1 {
+    font-size: clamp(28px, 5vw, 50px);
+}
+
+/* Animated Text */
+.ml6 {
     position: relative;
-  }
-  
-  .ml6 .text-wrapper {
+}
+
+.ml6 .text-wrapper {
     position: relative;
     display: inline-block;
-    padding-top: 0.2em;
-    padding-right: 0.05em;
-    padding-bottom: 0.1em;
+    padding: 0.2em 0.05em 0.1em;
     overflow: hidden;
-  }
-  
-  .ml6 .letter {
+}
+
+.ml6 .letter {
     display: inline-block;
     line-height: 1em;
-  }
-  
-  /* Footer */
-  footer {
+}
+
+/* Footer */
+footer {
     color: #fff;
-  }
-  footer a {
+    margin-top: auto;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+footer a {
     color: white;
     text-decoration: none;
-  }
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1148px) {
+    h1 {
+        font-size: clamp(28px, 6vw, 50px);
+    }
+}
+
+@media (max-width: 795px) {
+    h1 {
+        font-size: clamp(24px, 5vw, 40px);
+    }
+}
